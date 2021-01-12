@@ -1,4 +1,3 @@
-import { Bomb } from "./Bomb.js";
 import { Tray } from "./Tray.js";
 
 export class Game {

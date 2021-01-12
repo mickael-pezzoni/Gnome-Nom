@@ -24,9 +24,14 @@ export class Tray {
         this.context = this.canvas.getContext('2d');
         this.image.onload = () => {
             this.context.drawImage(this.image, 0, 0, SIZE_CANVAS, SIZE_CANVAS);
-            this.bomb = new Bomb(this.context);
+            this.bombs = [new Bomb(this.context,50,100),
+                new Bomb(this.context,200,100),
+                new Bomb(this.context,500,256),
+                new Bomb(this.context,365,100)];
             this.hero = new Perso(this.context);
-            this.foe = new Foe(this.context);
+            this.foe = [new Foe(this.context,0,0),
+                    new Foe(this.context,500,500),
+                    new Foe(this.context,200,0)];
         }
     }
     

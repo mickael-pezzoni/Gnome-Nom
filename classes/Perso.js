@@ -6,6 +6,6 @@ export class Perso {
         this.canvasCtx = canvasCtx;
         this.heroImg = new Image();
         this.heroImg.src = HERO_IMG;
-        this.heroImg.onload = () => this.canvasCtx.drawImage(this.heroImg, 10, 10, 100, 100);
+        this.heroImg.onload = () => this.canvasCtx.drawImage(this.heroImg, 360, 632, 32, 32);
     }
 }

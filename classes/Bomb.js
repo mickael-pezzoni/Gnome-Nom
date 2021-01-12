@@ -2,10 +2,12 @@ import { BOMB_IMG } from "../const/const.js";
 
 export class Bomb {
 
-    constructor(canvasCtx) {
+    constructor(canvasCtx,x,y) {
         this.canvasCtx = canvasCtx;
+        this.x = x;
+        this.y = y;
         this.bombImg = new Image();
         this.bombImg.src = BOMB_IMG;
-        this.bombImg.onload = () => this.canvasCtx.drawImage(this.bombImg, 10, 10, 100, 100);
+        this.bombImg.onload = () => this.canvasCtx.drawImage(this.bombImg, x, y, 32, 32);
     }
 }

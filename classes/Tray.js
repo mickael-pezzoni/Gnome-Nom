@@ -1,5 +1,6 @@
-import { SIZE, CASTLE_IMG } from "../const/const.js";
+import { SIZE_CANVAS, CASTLE_IMG } from "../const/const.js";
 import { Bomb } from "./Bomb.js";
+import { Foe } from "./Foe.js";
 import { Perso } from "./Perso.js";
 
 export class Tray {
@@ -19,12 +20,13 @@ export class Tray {
         this.image = new Image();
         this.image.src = CASTLE_IMG;
 
-        this.canvas.height = this.canvas.width = SIZE;
+        this.canvas.height = this.canvas.width = SIZE_CANVAS;
         this.context = this.canvas.getContext('2d');
         this.image.onload = () => {
-            this.context.drawImage(this.image, 0, 0, SIZE, SIZE);
+            this.context.drawImage(this.image, 0, 0, SIZE_CANVAS, SIZE_CANVAS);
             this.bomb = new Bomb(this.context);
             this.hero = new Perso(this.context);
+            this.foe = new Foe(this.context);
         }
     }
     
